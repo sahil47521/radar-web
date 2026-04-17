@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { posts } from "../page";
+import { posts } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import Link from "next/link";
