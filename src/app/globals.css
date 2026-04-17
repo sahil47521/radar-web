@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #253C69;
+  --color-teal: #005061;
+  --color-white: #FFFFFF;
+
+  --color-navy-light: #3a558c;
+  --color-teal-light: #00768f;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-gradient-text: gradient-text 8s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #253C69;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(37, 60, 105, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-mesh {
+  background-color: #253C69;
+  background-image:
+    radial-gradient(at 0% 0%, #005061 0px, transparent 50%),
+    radial-gradient(at 100% 0%, #00768f 0px, transparent 50%),
+    radial-gradient(at 100% 100%, #253C69 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #005061 0px, transparent 50%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #005061, #00768f, #FFFFFF);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 8s linear infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.transform-rotate-y-180 {
+  transform: rotateY(180deg);
+}
