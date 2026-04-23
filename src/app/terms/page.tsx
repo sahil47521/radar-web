@@ -4,37 +4,71 @@ import StaticLayout from "@/components/StaticLayout";
 
 export default function TermsPage() {
   return (
-    <StaticLayout title="Terms of Service">
+    <StaticLayout title="Terms of Use">
       <div className="space-y-8">
+        <p className="text-sm italic">Last Updated: April 23, 2026</p>
+        
+        <p>
+          Welcome to Radar. These Terms of Use ("Terms") govern your access to and use of the Radar mobile application and website (the "Service"). By using the Service, you agree to be bound by these Terms.
+        </p>
+
         <section>
-          <h2 className="text-2xl font-black text-navy mb-4">1. Acceptance of Terms</h2>
+          <h2 className="text-2xl font-black text-navy mb-4">1. Description of Service</h2>
           <p>
-            By accessing and using RADAR ("the Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the service.
+            Radar is a content aggregation platform that provides curated news, videos, and articles ("Content"). We provide tools to discover, read, and save content through our "Read Mode" and "Scan Mode" interfaces.
           </p>
         </section>
         
         <section>
-          <h2 className="text-2xl font-black text-navy mb-4">2. Use of Service</h2>
+          <h2 className="text-2xl font-black text-navy mb-4">2. User Accounts</h2>
           <p>
-            RADAR provides curated content for informational purposes. You are responsible for any actions taken based on the information provided by our service.
+            To access certain features, such as bookmarking and personalizing your feed, you may be required to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
           </p>
         </section>
         
         <section>
-          <h2 className="text-2xl font-black text-navy mb-4">3. User Accounts</h2>
+          <h2 className="text-2xl font-black text-navy mb-4">3. Intellectual Property</h2>
+          <div className="space-y-4">
+            <p>
+              <span className="font-bold">Our Content:</span> The Radar name, logo, and the design and functionality of the Service are the exclusive property of Radar.
+            </p>
+            <p>
+              <span className="font-bold">Third-Party Content:</span> Radar aggregates content from various sources (e.g., YouTube). All rights to such third-party content belong to their respective owners. Radar does not claim ownership over aggregated content.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-black text-navy mb-4">4. Prohibited Conduct</h2>
+          <p>You agree not to:</p>
+          <ul className="list-disc pl-5 space-y-2 mt-2">
+            <li>Use the Service for any illegal purpose.</li>
+            <li>Attempt to gain unauthorized access to our systems or user accounts.</li>
+            <li>Use automated scripts to scrape or "crawl" the Service without our express permission.</li>
+            <li>Modify, adapt, or hack the Service.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-black text-navy mb-4">5. Limitation of Liability</h2>
           <p>
-            You may need to create an account to access certain features. You are responsible for maintaining the confidentiality of your account credentials.
+            Radar provides the Service "as is." We do not guarantee the accuracy, completeness, or timeliness of the Content aggregated from third-party sources. We are not liable for any damages resulting from your use of the Service or reliance on any Content.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-navy mb-4">4. Intellectual Property</h2>
+          <h2 className="text-2xl font-black text-navy mb-4">6. Termination</h2>
           <p>
-            The content provided through RADAR is the property of TryRadar or its licensors. You may not distribute, modify, or reuse the content without explicit permission.
+            We reserve the right to suspend or terminate your account or access to the Service at our sole discretion, without notice, for conduct that we believe violates these Terms.
           </p>
         </section>
 
-        <p className="text-sm italic">Last Updated: April 15, 2024</p>
+        <section>
+          <h2 className="text-2xl font-black text-navy mb-4">7. Changes to Terms</h2>
+          <p>
+            We may update these Terms from time to time. Your continued use of the Service after changes are posted constitutes your acceptance of the revised Terms.
+          </p>
+        </section>
       </div>
     </StaticLayout>
   );
