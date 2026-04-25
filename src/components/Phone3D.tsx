@@ -32,9 +32,9 @@ function PortraitSlideshow() {
   return (
     <mesh>
       <planeGeometry args={[3.2, 5.8]} />
-      <meshBasicMaterial 
-        map={textures[index]} 
-        transparent={true} 
+      <meshBasicMaterial
+        map={textures[index]}
+        transparent={true}
         alphaTest={0.5}
       />
     </mesh>
@@ -104,9 +104,9 @@ function FloatingContent() {
 export default function Phone3D() {
   return (
     <div className="w-full h-full flex items-center justify-center" style={{ background: 'transparent' }}>
-      <Canvas 
+      <Canvas
         dpr={[1, 2]}
-        gl={{ alpha: true, antialias: true }} 
+        gl={{ alpha: true, antialias: true }}
         style={{ background: 'transparent' }}
       >
         <PerspectiveCamera makeDefault position={[0, 0, 8]} fov={45} />

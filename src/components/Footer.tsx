@@ -1,85 +1,104 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, ArrowRight, X } from "lucide-react";
+import { Mail, ArrowRight, X, Heart } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/home";
+
   return (
-    <footer className="bg-navy text-white pt-24 pb-12">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
+    <footer className="bg-navy text-white pt-24 pb-12 relative overflow-hidden">
+      {/* Decorative Gradient Line */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-teal/50 to-transparent"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          {/* Brand Section */}
+          <div className="md:col-span-5 lg:col-span-4">
+            <Link href="/" className="inline-block mb-8 group">
               <img
                 src="/images/logo-dark.png"
                 alt="Radar Logo"
-                className="h-8 w-auto object-contain transition-transform group-hover:scale-105 mix-blend-screen"
+                className="h-9 w-auto object-contain transition-all group-hover:scale-105 brightness-110 mix-blend-screen"
               />
             </Link>
-            <p className="text-white/50 mb-8 max-w-xs">
-              Stay ahead of the curve with curated insights and expert knowledge.
+            <p className="text-white/50 mb-8 max-w-sm leading-relaxed text-sm font-medium">
+              Elevating human intelligence with curated, high-signal feeds. Join the revolution of high-performers staying ahead of the curve.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white transition-all duration-300 group/icon">
-                <FaXTwitter className="w-4 h-4 transition-all group-hover/icon:scale-110 text-white group-hover/icon:text-navy" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white transition-all duration-300 group/icon">
-                <FaFacebookF className="w-4 h-4 transition-all group-hover/icon:scale-110 text-white group-hover/icon:text-navy" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white transition-all duration-300 group/icon">
-                <FaInstagram className="w-4 h-4 transition-all group-hover/icon:scale-110 text-white group-hover/icon:text-navy" />
-              </a>
+              {[
+                { icon: <FaXTwitter />, href: "#" },
+                { icon: <FaFacebookF />, href: "#" },
+                { icon: <FaInstagram />, href: "#" },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-teal hover:border-teal transition-all duration-300 group/icon"
+                >
+                  <span className="text-white transition-all group-hover/icon:scale-110">
+                    {social.icon}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Links 1 */}
-          <div>
-            <h4 className="font-bold mb-6">Product</h4>
-            <ul className="space-y-4">
-              <li><Link href="#features" className="text-white/50 hover:text-white transition-colors">Features</Link></li>
-              <li><Link href="#pricing" className="text-white/50 hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link href="/blog" className="text-white/50 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/home" className="text-white/50 hover:text-white transition-colors">Dashboard</Link></li>
-            </ul>
-          </div>
+          {/* Navigation Columns */}
+          <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div className="sm:col-start-2">
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-8">Product</h4>
+              <ul className="space-y-4">
+                {['Features', 'Pricing', 'waitlist'].map((link) => (
+                  <li key={link}>
+                    <Link
+                      href={link === 'waitlist' ? '/' : `#${link.toLowerCase()}`}
+                      className="text-sm font-bold text-white/50 hover:text-white transition-all flex items-center group/link"
+                    >
+                      <span className="w-0 group-hover/link:w-3 h-[1px] bg-white mr-0 group-hover/link:mr-2 transition-all"></span>
+                      {link === 'waitlist' ? 'Waitlist' : link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Links 2 */}
-          <div>
-            <h4 className="font-bold mb-6">Company</h4>
-            <ul className="space-y-4">
-              <li><Link href="/about" className="text-white/50 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/terms" className="text-white/50 hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="/privacy" className="text-white/50 hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="mailto:hello@tryradar.com" className="text-white/50 hover:text-white transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="lg:col-span-1">
-            <h4 className="font-bold mb-6">Newsletter</h4>
-            <p className="text-white/50 mb-6 text-sm leading-relaxed">
-              Get the latest updates and articles directly in your inbox.
-            </p>
-            <form className="relative group">
-              <input
-                type="email"
-                placeholder="Email address"
-                className="w-full bg-white/5 rounded-xl py-3 pl-4 pr-12 focus:outline-none focus:ring-1 focus:ring-teal transition-all"
-              />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white rounded-lg hover:bg-white/90 transition-all group/btn">
-                <ArrowRight className="w-4 h-4 text-navy" />
-              </button>
-            </form>
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-8">Company</h4>
+              <ul className="space-y-4">
+                {[
+                  // { name: 'About Us', href: '/about' },
+                  { name: 'Terms of Service', href: '/terms' },
+                  { name: 'Privacy Policy', href: '/privacy' },
+                  { name: 'Contact', href: 'mailto:hello@tryradar.com' },
+                ].map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm font-bold text-white/50 hover:text-white transition-all flex items-center group/link"
+                    >
+                      <span className="w-0 group-hover/link:w-3 h-[1px] bg-white mr-0 group-hover/link:mr-2 transition-all"></span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center gap-6">
-          <p className="text-white/40 text-xs uppercase tracking-widest font-black text-center">
-            © 2026 Radar Made with ❤️ for professional growth.
-          </p>
+        <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center">
+          <div className="flex items-center gap-2 text-white/30 text-[10px] font-bold uppercase tracking-widest">
+            <span>© {new Date().getFullYear()} RADAR</span>
+            <span className="w-1 h-1 rounded-full bg-white/20"></span>
+            <span className="flex items-center gap-1">
+              Made with <Heart className="w-3 h-3 text-red-500/50" /> for growth
+            </span>
+          </div>
         </div>
       </div>
     </footer>

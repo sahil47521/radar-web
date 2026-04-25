@@ -5,8 +5,11 @@ import Link from "next/link";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Radar, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/home";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -27,8 +30,8 @@ export default function Header() {
     { name: "Features", href: "#features" },
     { name: "Pricing", href: "#pricing" },
     { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
+    // ...(isHome ? [{ name: "Blog", href: "/blog" }] : []),
+    // { name: "About", href: "/about" },
   ];
 
   return (

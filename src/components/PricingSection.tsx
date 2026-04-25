@@ -1,8 +1,8 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function PricingSection() {
   const plans = [
@@ -19,6 +19,7 @@ export default function PricingSection() {
         "Community Access"
       ],
       cta: "Join Waitlist",
+      href: "/",
       highlight: false,
     },
     {
@@ -34,6 +35,7 @@ export default function PricingSection() {
         "Pro Content – Guides, Tracks"
       ],
       cta: "Coming Soon",
+      href: "#",
       highlight: true,
     },
   ];
@@ -87,17 +89,31 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <button
-                disabled={plan.cta === "Coming Soon"}
-                className={cn(
-                  "w-full py-4 rounded-xl font-black text-base transition-all transform hover:scale-[1.02] active:scale-95",
-                  plan.highlight
-                    ? "bg-white text-navy hover:bg-zinc-100"
-                    : "bg-teal text-white shadow-xl shadow-teal/20"
-                )}
-              >
-                {plan.cta}
-              </button>
+              {plan.cta === "Coming Soon" ? (
+                <button
+                  disabled
+                  className={cn(
+                    "w-full py-4 rounded-xl font-black text-base transition-all transform opacity-50 cursor-not-allowed",
+                    plan.highlight
+                      ? "bg-white text-navy"
+                      : "bg-teal text-white"
+                  )}
+                >
+                  {plan.cta}
+                </button>
+              ) : (
+                <Link
+                  href={plan.href}
+                  className={cn(
+                    "w-full py-4 rounded-xl font-black text-base transition-all transform hover:scale-[1.02] active:scale-95 text-center flex items-center justify-center",
+                    plan.highlight
+                      ? "bg-white text-navy hover:bg-zinc-100"
+                      : "bg-teal text-white shadow-xl shadow-teal/20"
+                  )}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
