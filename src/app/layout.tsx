@@ -10,9 +10,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: {
     template: "%s | RADAR",
-    default: "RADAR | Level Up & Stay Up to Date",
+    default: "Waitlist | RADAR - The Intelligence Layer for High-Performers",
   },
-  description: "Advanced curated feeds, weekly digests, and expert sources for professional growth. Stay ahead of the curve with RADAR.",
+  description: "Join the waitlist for RADAR. Advanced curated feeds, weekly digests, and expert insights to help you level up and stay ahead.",
   openGraph: {
     title: "RADAR",
     description: "Level Up & Stay Up to Date with RADAR",
