@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
-    const firstName = formData.get('firstName');
     const email = formData.get('email');
     const userGroup = formData.get('userGroup');
 
@@ -12,7 +11,6 @@ export async function POST(req: Request) {
     }
 
     const loopsFormData = new URLSearchParams();
-    loopsFormData.append('firstName', String(firstName || ''));
     loopsFormData.append('email', String(email));
     loopsFormData.append('userGroup', String(userGroup || 'WaitList'));
 

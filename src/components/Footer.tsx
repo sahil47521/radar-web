@@ -19,17 +19,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           {/* Brand Section */}
           <div className="md:col-span-5 lg:col-span-4">
-            <Link href="/" className="inline-block mb-8 group">
+            <Link href="/" className="inline-block mb-3 group">
               <img
                 src="/images/logo-dark.png"
                 alt="Radar Logo"
                 className="h-9 w-auto object-contain transition-all group-hover:scale-105 brightness-110 mix-blend-screen"
               />
             </Link>
-            <p className="text-white/50 mb-8 max-w-sm leading-relaxed text-sm font-medium">
-              Elevating human intelligence with curated, high-signal feeds. Join the revolution of high-performers staying ahead of the curve.
-            </p>
-            <div className="flex gap-4">
+            <div className="space-y-2">
+              <h5 className="text-white font-black text-sm uppercase tracking-widest">Applied Data, Inc.</h5>
+              <div className="space-y-1 text-white text-xs font-medium">
+                <p>130 Edinborough Cir APT 10</p>
+                <p>Greenwood - 29649, US</p>
+                <p className="pt-2 font-medium">+1 803 949 5247</p>
+              </div>
+            </div>
+            {/* <div className="flex gap-4">
               {[
                 { icon: <FaXTwitter />, href: "#" },
                 { icon: <FaFacebookF />, href: "#" },
@@ -45,7 +50,7 @@ export default function Footer() {
                   </span>
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation Columns */}
@@ -74,7 +79,7 @@ export default function Footer() {
                   // { name: 'About Us', href: '/about' },
                   { name: 'Terms of Service', href: '/terms' },
                   { name: 'Privacy Policy', href: '/privacy' },
-                  { name: 'Contact', href: 'mailto:hello@tryradar.com' },
+                  { name: 'Contact', href: 'mailto:support@tryradar.app' },
                 ].map((link) => (
                   <li key={link.name}>
                     <Link
@@ -93,7 +98,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-white/5 flex flex-col items-center justify-center">
           <div className="flex items-center gap-2 text-white/30 text-[10px] font-bold uppercase tracking-widest">
-            <span>© {new Date().getFullYear()} RADAR</span>
+            <span>© {new Date().getFullYear()} Applied Data, Inc.</span>
             <span className="w-1 h-1 rounded-full bg-white/20"></span>
             <span className="flex items-center gap-1">
               Made with <Heart className="w-3 h-3 text-red-500/50" /> for growth

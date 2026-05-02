@@ -7,24 +7,28 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    question: "What exactly is RADAR?",
-    answer: "RADAR is an advanced content curation platform that aggregates insights from expert sources, scientific papers, and industry leaders into a personalized feed and weekly digest.",
+    question: "What exactly is Radar?",
+    answer: "Radar is an advanced intelligence layer for high-performers. We aggregate insights from expert sources, industry leaders, and specialized researchers into a personalized, high-signal feed.",
   },
   {
-    question: "How does the curation process work?",
-    answer: "We use a combination of human experts and proprietary algorithms to filter out noise and surface only the most impactful information for your specific field.",
+    question: "What is Radar's 'Scan Mode'?",
+    answer: "Scan Mode is an immersive reading experience that distills long-form content into key highlights and actionable insights. It's designed to help you consume high-density information 10x faster.",
   },
   {
-    question: "Can I connect my own RSS feeds?",
-    answer: "Yes! Pro and Team users can import their own RSS feeds and have them automatically categorized and summarized by our engine.",
+    question: "How do the Smart Quizzes work?",
+    answer: "To ensure you're actually retaining the information you read, Radar generates personalized quizzes based on your feed. This helps you transition from passive consumption to active mastery of your field.",
   },
   {
     question: "Is there a mobile app?",
-    answer: "Currently we are a PWA (Progressive Web App) that works beautifully on all devices. A native iOS and Android app is in our roadmap for later this year.",
+    answer: "Yes! Radar is available as a native mobile app for both iOS and Android, offering the full 'Scan Mode' experience and real-time intelligence alerts on the go.",
   },
   {
-    question: "What's included in the weekly digest?",
-    answer: "The weekly digest is a high-level summary of the top 5 most important developments in your selected interests, delivered every Monday morning.",
+    question: "Is joining the waitlist free?",
+    answer: "Yes, joining the waitlist is 100% free. As an early adopter, you'll receive 6 months of Radar Pro for free when we officially launch.",
+  },
+  {
+    question: "How often will I receive digests?",
+    answer: "You have full control over your frequency. You can choose to receive daily highlights, weekly deep-dives, or bi-weekly summaries based on your preferred schedule.",
   },
 ];
 

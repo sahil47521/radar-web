@@ -9,7 +9,7 @@ export default function TermsPage() {
         <p className="text-sm italic">Last Updated: April 23, 2026</p>
         
         <p>
-          Welcome to Radar. These Terms of Use ("Terms") govern your access to and use of the Radar mobile application and website (the "Service"). By using the Service, you agree to be bound by these Terms.
+          Welcome to Radar. These Terms of Use ("Terms") govern your access to and use of the Radar mobile application and website (the "Service"), operated by Applied Data, Inc. By using the Service, you agree to be bound by these Terms.
         </p>
 
         <section>
@@ -30,7 +30,7 @@ export default function TermsPage() {
           <h2 className="text-2xl font-black text-navy mb-4">3. Intellectual Property</h2>
           <div className="space-y-4">
             <p>
-              <span className="font-bold">Our Content:</span> The Radar name, logo, and the design and functionality of the Service are the exclusive property of Radar.
+              <span className="font-bold">Our Content:</span> The Radar name, logo, and the design and functionality of the Service are the exclusive property of Applied Data, Inc.
             </p>
             <p>
               <span className="font-bold">Third-Party Content:</span> Radar aggregates content from various sources (e.g., YouTube). All rights to such third-party content belong to their respective owners. Radar does not claim ownership over aggregated content.
@@ -64,9 +64,9 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-black text-navy mb-4">7. Changes to Terms</h2>
+          <h2 className="text-2xl font-black text-navy mb-4">8. Contact Us</h2>
           <p>
-            We may update these Terms from time to time. Your continued use of the Service after changes are posted constitutes your acceptance of the revised Terms.
+            If you have any questions about these Terms, please contact us at <a href="mailto:support@tryradar.app" className="text-blue-600 hover:underline">support@tryradar.app</a>.
           </p>
         </section>
       </div>

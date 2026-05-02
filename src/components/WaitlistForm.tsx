@@ -7,7 +7,6 @@ import Confetti from "react-confetti";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const [isEmailInvalid, setIsEmailInvalid] = useState(false);
@@ -44,7 +43,6 @@ export default function WaitlistForm() {
     setStatus("loading");
 
     const formData = new URLSearchParams();
-    formData.append("firstName", firstName);
     formData.append("email", email);
     formData.append("userGroup", "WaitList");
 
@@ -56,7 +54,6 @@ export default function WaitlistForm() {
 
       if (response.ok) {
         setStatus("success");
-        setFirstName("");
         setEmail("");
         setIsEmailInvalid(false);
         // Reset status after 5 seconds to hide toast and confetti
@@ -107,32 +104,19 @@ export default function WaitlistForm() {
         transition={{ delay: 0.4 }}
       >
         <form onSubmit={handleSubmit} className="relative flex flex-col gap-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="relative group">
-              <input
-                type="text"
-                name="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder="Full Name"
-                required
-                className="w-full px-5 py-4 rounded-xl bg-white border-2 border-navy/10 text-navy placeholder:text-navy/30 focus:outline-none focus:border-navy focus:ring-4 focus:ring-navy/5 transition-all font-semibold text-sm"
-              />
-            </div>
-            <div className="relative group">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-                placeholder="Email Address"
-                required
-                className={`w-full px-5 py-4 rounded-xl bg-white border-2 text-navy placeholder:text-navy/30 focus:outline-none focus:ring-4 transition-all font-semibold text-sm ${isEmailInvalid
-                    ? "border-red-500 focus:border-red-500 focus:ring-red-100"
-                    : "border-navy/10 focus:border-navy focus:ring-navy/5"
-                  }`}
-              />
-            </div>
+          <div className="relative group">
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleEmailChange}
+              placeholder="Email Address"
+              required
+              className={`w-full px-5 py-4 rounded-xl bg-white border-2 text-navy placeholder:text-navy/30 focus:outline-none focus:ring-4 transition-all font-semibold text-sm ${isEmailInvalid
+                  ? "border-red-500 focus:border-red-500 focus:ring-red-100"
+                  : "border-navy/10 focus:border-navy focus:ring-navy/5"
+                }`}
+            />
           </div>
 
           <input type="hidden" name="userGroup" value="WaitList" />

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         <p className="text-sm italic">Last Updated: April 23, 2026</p>
         
         <p>
-          Radar ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Service.
+          Applied Data, Inc. ("Radar," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Service.
         </p>
 
         <section>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-2xl font-black text-navy mb-4">7. Contact Us</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@radar.com" className="text-blue-600 hover:underline">support@radar.com</a>.
+            If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@tryradar.app" className="text-blue-600 hover:underline">support@tryradar.app</a>.
           </p>
         </section>
       </div>
